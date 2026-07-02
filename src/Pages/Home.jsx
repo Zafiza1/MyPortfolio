@@ -67,7 +67,7 @@ const CTAButton = ({ text, icon: Icon, primary, delay, onClick }) => (
 )
 
 const SOCIAL_LINKS = [
-  { icon: Github, link: "https://github.com/EkiZR", label: "GitHub Profile" },
+  { icon: Github, link: "https://github.com/Zafiza1", label: "GitHub Profile" },
   { icon: Linkedin, link: "https://www.linkedin.com/in/ekizr/", label: "LinkedIn Profile" },
   { icon: Instagram, link: "https://www.instagram.com/ekizr_/?hl=id", label: "Instagram Profile" }
 ]
@@ -112,7 +112,7 @@ const Home = () => {
             "jobTitle": "Full Stack Web Developer & UI/UX Designer",
             "url": "https://ekizr.com",
             "sameAs": [
-              "https://github.com/EkiZR",
+              "https://github.com/Zafiza1",
               "https://www.linkedin.com/in/ekizr/",
               "https://www.instagram.com/ekizr_/"
             ]

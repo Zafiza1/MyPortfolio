@@ -156,7 +156,7 @@ const About = () => {
                     <motion.a
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
-                      href="https://github.com/EkiZR"
+                      href="https://github.com/Zafiza1"
                       target="_blank"
                       className="w-10 h-10 rounded-xl bg-surface border border-white/10 flex items-center justify-center hover:border-primary/50 transition-all"
                     >
