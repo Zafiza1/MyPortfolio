@@ -267,8 +267,8 @@ const ProjectForm = ({
         <InputField
           label="GitHub URL"
           value={form.Github}
-          onChange={set("Github")}
-          placeholder="https://github.com/username/repo"
+          onChange={set("")}
+          placeholder="https://.com/username/repo"
         />
 
         <div className="sm:col-span-2 space-y-1.5">

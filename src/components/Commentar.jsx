@@ -5,7 +5,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 
-const Comment = memo(({ comment, formatDate, index, isPinned = false }) => (
+const Comment = memo(function Comment({ comment, formatDate, isPinned = false }) {
+    return (
     <div 
         className={`px-4 pt-4 pb-2 rounded-xl border transition-all group hover:shadow-lg hover:-translate-y-0.5 ${
             isPinned 
@@ -60,9 +61,10 @@ const Comment = memo(({ comment, formatDate, index, isPinned = false }) => (
             </div>
         </div>
     </div>
-));
+    );
+});
 
-const CommentForm = memo(({ onSubmit, isSubmitting, error }) => {
+const CommentForm = memo(function CommentForm({ onSubmit, isSubmitting }) {
     const [newComment, setNewComment] = useState('');
     const [userName, setUserName] = useState('');
     const [imagePreview, setImagePreview] = useState(null);

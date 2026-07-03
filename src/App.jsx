@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import React, { useState, useEffect, useRef, lazy, Suspense } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import "./index.css";
@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import AnimatedBackground from "./components/Background";
 import { AnimatePresence } from "framer-motion";
 import Footer from "./components/Footer";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 // Lazy load all pages and components for better performance
 const Home = lazy(() => import("./Pages/Home"));
@@ -17,7 +18,9 @@ const Dashboard = lazy(() => import("./Pages/Dashboard"));
 const ProjectDetails = lazy(() => import("./components/ProjectDetail"));
 const WelcomeScreen = lazy(() => import("./Pages/WelcomeScreen"));
 const NotFoundPage = lazy(() => import("./Pages/404"));
-const ProtectedRoute = lazy(() => import("./components/ProtectedRoute"));
+const Projects = lazy(() => import("./Pages/dashboard/Projects"));
+const Certificates = lazy(() => import("./Pages/dashboard/Certificates"));
+const Comments = lazy(() => import("./Pages/dashboard/Comments"));
 
 // Loading component
 const LoadingSpinner = () => (
@@ -121,13 +124,30 @@ function App() {
 
           {/* ADMIN (PROTECTED) */}
           <Route
-            path="/dashboard/*"
+            path="/dashboard"
             element={
               <ProtectedRoute>
                 <Dashboard />
               </ProtectedRoute>
             }
-          />
+          >
+            <Route index element={<Navigate to="projects" replace />} />
+            <Route path="projects" element={
+              <Suspense fallback={<LoadingSpinner />}>
+                <Projects />
+              </Suspense>
+            } />
+            <Route path="certificates" element={
+              <Suspense fallback={<LoadingSpinner />}>
+                <Certificates />
+              </Suspense>
+            } />
+            <Route path="comments" element={
+              <Suspense fallback={<LoadingSpinner />}>
+                <Comments />
+              </Suspense>
+            } />
+          </Route>
 
           {/* 404 */}
           <Route
