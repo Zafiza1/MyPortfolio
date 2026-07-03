@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { User, Mail, MessageSquare, Send } from "lucide-react";
+import { User, Mail, MessageSquare } from "lucide-react";
 import Swal from "sweetalert2";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -211,7 +211,6 @@ const ContactPage = () => {
                 disabled={isSubmitting}
                 className="w-full bg-gradient-to-r from-primary to-accent text-white py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <Send className="w-5 h-5" />
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </motion.button>
             </form>

@@ -47,7 +47,7 @@ const SocialLink = ({ icon: Icon, link, label, delay }) => (
   </motion.a>
 )
 
-const CTAButton = ({ text, icon: Icon, primary, delay, onClick }) => (
+const CTAButton = ({ text, primary, delay, onClick }) => (
   <motion.button
     initial={{ opacity: 0, x: -20 }}
     animate={{ opacity: 1, x: 0 }}
@@ -62,14 +62,13 @@ const CTAButton = ({ text, icon: Icon, primary, delay, onClick }) => (
     }`}
   >
     {text}
-    <Icon className="w-4 h-4" />
   </motion.button>
 )
 
 const SOCIAL_LINKS = [
   { icon: Github, link: "https://github.com/Zafiza1", label: "GitHub Profile" },
-  { icon: Linkedin, link: "https://www.linkedin.com/in/ekizr/", label: "LinkedIn Profile" },
-  { icon: Instagram, link: "https://www.instagram.com/ekizr_/?hl=id", label: "Instagram Profile" }
+  { icon: Linkedin, link: "https://www.linkedin.com/in/zafi-zunaidi-aziz-b6618a2b8", label: "LinkedIn Profile" },
+  { icon: Instagram, link: "https://www.instagram.com/zafiza_1/?hl=id", label: "Instagram Profile" }
 ]
 
 const Home = () => {
@@ -99,22 +98,23 @@ const Home = () => {
         <title>Zafi Zunaidi Aziz — Full Stack Web Developer & UI/UX Designer</title>
         <meta name="description" content="Website resmi Zafi Zunaidi Aziz, Full Stack Web Developer & UI/UX Designer. Saya berfokus pada pembuatan website modern, aplikasi web, dan sistem informasi yang cepat, responsif, serta mudah digunakan." />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://ekizr.com" />
+        <link rel="canonical" href="/" />
         <meta property="og:title" content="Zafi Zunaidi Aziz — Full Stack Web Developer & UI/UX Designer" />
         <meta property="og:description" content="Website resmi dan portofolio Zafi Zunaidi Aziz, Full Stack Web Developer & UI/UX Designer." />
-        <meta property="og:url" content="https://ekizr.com" />
+        <meta property="og:url" content="/" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="" />
         <script type="application/ld+json">{`
           {
             "@context": "https://schema.org",
             "@type": "Person",
             "name": "Zafi Zunaidi Aziz",
             "jobTitle": "Full Stack Web Developer & UI/UX Designer",
-            "url": "https://ekizr.com",
+            "url": "/",
             "sameAs": [
               "https://github.com/Zafiza1",
-              "https://www.linkedin.com/in/ekizr/",
-              "https://www.instagram.com/ekizr_/"
+              "https://www.linkedin.com/in/zafi-zunaidi-aziz-b6618a2b8",
+              "https://www.instagram.com/zafiza_1/?hl=id"
             ]
           }
         `}</script>
@@ -191,20 +191,17 @@ const Home = () => {
               >
                 <CTAButton 
                   text="View Portfolio" 
-                  icon={ExternalLink} 
                   primary 
                   delay={0.9}
                   onClick={() => scrollToSection('#Portfolio')}
                 />
                 <CTAButton 
                   text="Contact Me" 
-                  icon={Mail} 
                   delay={1.0}
                   onClick={() => scrollToSection('#Contact')}
                 />
                 <CTAButton 
                   text="Download CV" 
-                  icon={Download} 
                   delay={1.1}
                 />
               </motion.div>

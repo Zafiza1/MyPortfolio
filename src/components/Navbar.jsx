@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -127,16 +127,6 @@ const Navbar = () => {
                             ))}
                         </nav>
 
-                        {/* CTA Button */}
-                        <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="hidden md:flex items-center gap-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-primary to-accent rounded-xl text-white text-xs sm:text-sm font-medium shadow-glow"
-                        >
-                            <Download className="w-3 h-3 sm:w-4 sm:h-4" />
-                            <span className="hidden sm:inline">Resume</span>
-                        </motion.button>
-            
                         {/* Mobile Menu Button */}
                         <motion.button
                             whileHover={{ scale: 1.1 }}
@@ -205,17 +195,6 @@ const Navbar = () => {
                                         {item.label}
                                     </motion.a>
                                 ))}
-                                <motion.button
-                                    initial={{ x: 50, opacity: 0 }}
-                                    animate={{ x: 0, opacity: 1 }}
-                                    transition={{ delay: navItems.length * 0.1 }}
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
-                                    className="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 sm:py-3 bg-gradient-to-r from-primary to-accent rounded-xl text-white text-sm sm:text-base font-medium shadow-glow mt-2 sm:mt-4"
-                                >
-                                    <Download className="w-4 h-4" />
-                                    Download Resume
-                                </motion.button>
                             </div>
                         </motion.div>
                     </motion.div>

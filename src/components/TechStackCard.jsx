@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Progress } from './ui';
-import { Zap } from 'lucide-react';
 
 const TechStackCard = ({ icon, name, level, category, delay = 0 }) => {
   const categoryColors = {
@@ -37,7 +36,6 @@ const TechStackCard = ({ icon, name, level, category, delay = 0 }) => {
             />
           </div>
           <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-primary/10 border border-primary/20">
-            <Zap className="w-3 h-3 text-primary" />
             <span className="text-xs font-medium text-primary">{level}%</span>
           </div>
         </div>
